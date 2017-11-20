@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 
 
 def __add_node_read(key, values, dic_graph):
-
     if values[0] not in dic_graph:
         dic_graph[values[0]] = node.Node(values[0], values[2])
     dic_graph[key].add_node(dic_graph[values[0]], values[3])
@@ -39,13 +38,34 @@ def __get_edges_from(dic_graph):
     edges_from = []
     for key, value in dic_graph.items():
         for node_son in value.sons:
-            edges_from.append((key, node_son[0].name))
+            edges_from.append((key, node_son[0].name, node_son[1]))
     return edges_from
 
 
 def draw_graph(dic_graph):
     graph = nx.Graph()
-    graph.add_edges_from(__get_edges_from(dic_graph))
-    nx.draw_spring(graph, with_labels=True)
+    graph.add_weighted_edges_from(__get_edges_from(dic_graph), with_labels=True)
+
+    elarge = [(u, v) for (u, v, d) in graph.edges(data=True) if float(d['weight']) > 0.5]
+    esmall = [(u, v) for (u, v, d) in graph.edges(data=True) if float(d['weight']) <= 0.5]
+
+    pos = nx.spring_layout(graph)  # positions for all nodes
+
+    # nodes
+    nx.draw_networkx_nodes(graph, pos, node_size=500, node_color='orange')
+
+    # edges
+    nx.draw_networkx_edges(graph, pos, edgelist=elarge, width=2, edge_color='g')
+    nx.draw_networkx_edges(graph, pos, edgelist=esmall, arrows=False, width=3,
+                           alpha=0.5, edge_color='b', style='dashed')
+
+    # labels
+    nx.draw_networkx_labels(graph, pos, font_size=10, font_family='sans-serif')
+
+    # Draw edge labels
+    edge_labels = nx.get_edge_attributes(graph,'weight')
+
+    nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels)
+    plt.axis('off')
     plt.draw()
     plt.show()
