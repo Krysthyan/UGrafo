@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>921</width>
-    <height>435</height>
+    <width>903</width>
+    <height>499</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
      <string>Visualizar grafo</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btn_buscar">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -46,7 +46,7 @@
       <x>0</x>
       <y>110</y>
       <width>911</width>
-      <height>251</height>
+      <height>301</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -77,6 +77,26 @@
          <string>Busqueda costo uniforme</string>
         </property>
        </row>
+       <row>
+        <property name="text">
+         <string>Busqueda ascenso de camino</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Busqueda primero el mejor</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Busqueda a*</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Busqueda Avara</string>
+        </property>
+       </row>
        <column>
         <property name="text">
          <string>Tiempo</string>
@@ -89,7 +109,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Buscar</string>
+         <string>Complejidad</string>
         </property>
        </column>
       </widget>
@@ -142,17 +162,17 @@
      <string>Nodo Final</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QPushButton" name="btn_atras">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>60</y>
-      <width>93</width>
-      <height>26</height>
+      <x>30</x>
+      <y>430</y>
+      <width>201</width>
+      <height>36</height>
      </rect>
     </property>
     <property name="text">
-     <string>CheckBox</string>
+     <string>Atras</string>
     </property>
    </widget>
   </widget>

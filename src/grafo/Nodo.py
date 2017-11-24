@@ -12,6 +12,7 @@ class Node:
         self.sons.append((node, weight))
         
         self.sons.sort(key=lambda x: x[0].name)
+        node.roots.sort(key=lambda x: x[0].name)
 
     def get_path(self):
         [(print(node[0].name), node[0].get_path()) for node in self.sons]

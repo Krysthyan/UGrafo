@@ -1,0 +1,14 @@
+colombia,bolivia,120,90,4
+colombia,panama,120,48,11
+colombia,ecuador,120,118,3
+bolivia,brasil,90,194,7
+brasil,panama,194,48,9
+ecuador,chile,118,145,8
+chile,peru,145,93,2
+peru,paraguay,93,240,8
+peru,costa_rica,93,177,15
+paraguay,costa_rica,240,177,12
+panama,paraguay,48,240,5
+panama,uruguay,48,78,6
+uruguay,eeuu,78,0,20
+costa_rica,eeuu,177,0,7
